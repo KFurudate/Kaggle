@@ -1,0 +1,18 @@
+#Decompression of large image data files
+
+from google.colab import drive
+drive.mount('/content/drive')
+
+Comp_name="*"
+
+!ls /content/drive/My\ Drive/Kaggle/$Comp_name/input
+
+File_name="*.zip"
+
+!chmod -R 600 /content/drive/My\ Drive/Kaggle/$Comp_name/input
+
+!sudo apt-get install p7zip-full
+
+%cd /content/drive/My\ Drive/Kaggle/$Comp_name/input
+!7z x $File_name
+%cd /content/
