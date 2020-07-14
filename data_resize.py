@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
-"""Data_resize.ipynb
+"""
+Data_resize.ipynb
 Used for resizing image dataset by Kaggle notebooks.
 """
 
@@ -11,8 +12,10 @@ import os
 from PIL import Image, ImageFile
 from tqdm import tqdm
 
+#########################
 ImageFile.LOAD_TRUNCATED_IMAGES = True
 
+#########################
 def resize_image(image_path, output_folder, resize):
 	base_name = os.path.basename(image_path)
 	outpath = os.path.join(output_folder, base_name)
@@ -22,8 +25,13 @@ def resize_image(image_path, output_folder, resize):
 			)
 	img.save(outpath)
 
-"""# Reseize train images"""
+#########################
+	
+"""
+# Reseize images
+"""
 
+# Set resize
 SIZE=512
 
 # Set path
@@ -33,10 +41,12 @@ in_f_test = "../input/siim-isic-melanoma-classification/jpeg/test"
 out_f_train="/kaggle/working/train_512"
 out_f_test="/kaggle/working/test_512"
 
+#########################
 ! mkdir -p $out_f_train
 ! mkdir -p $out_f_test
 ! ls
 
+#########################
 # Resize train images
 images = glob(os.path.join(in_f_train, "*.jpg"))
 Parallel(n_jobs=12)(
