@@ -1,4 +1,5 @@
 #Install_LightGBM_with_GPU
+# params = {'num_leaves': 27, 'max_depth': 7,'learning_rate':0.1, 'device_type': "gpu",'num_threads': 2,'verbose': -1}
 
 ! git clone --recursive https://github.com/Microsoft/LightGBM
 
