@@ -1,4 +1,11 @@
 #データのダウンロード
+import os
+
+import pandas as pd
+import numpy as np
+from glob import  glob
+
+import matplotlib.pyplot as plt
 
 %env DATA_ROOT /"your-directory-here"/
 
@@ -9,3 +16,15 @@
     mkdir -p photos && \
     unzip -n photos.zip -d ./photos
     
+dataset_root = os.environ.get('DATA_ROOT', None)
+assert dataset_root is not None
+
+input_dir = os.path.join(dataset_root, "inputs")
+photo_dir = os.path.join(input_dir, "photos")
+
+output_dir = os.path.join(dataset_root, "outputs_tutorial#1")
+os.makedirs(output_dir, exist_ok=True)
+
+photo_pathes = glob(os.path.join(photo_dir, "*.jpg"))
+
+glob(dataset_root + '/inputs/*')
