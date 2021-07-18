@@ -1,0 +1,11 @@
+#データのダウンロード
+
+%env DATA_ROOT /"your-directory-here"/
+
+!mkdir -p ${DATA_ROOT}/inputs && \
+    cd ${DATA_ROOT}/inputs && \
+    wget -O data.zip "your-copied-url-here" && \
+    unzip -n data.zip && \
+    mkdir -p photos && \
+    unzip -n photos.zip -d ./photos
+    
